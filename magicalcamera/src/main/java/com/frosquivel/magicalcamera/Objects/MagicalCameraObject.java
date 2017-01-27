@@ -17,12 +17,6 @@ public class MagicalCameraObject {
     //================================================================================
     // Properties
     //================================================================================
-    //region Properties
-    //The constants for take or selected photo validate
-    public static final int TAKE_PHOTO = 0;
-    public static final int SELECT_PHOTO = 1;
-    public static final int LANDSCAPE_CAMERA = 2;
-    public static final int NORMAL_CAMERA = 3;
 
     //my activity variable
     private Activity activity;
@@ -49,7 +43,7 @@ public class MagicalCameraObject {
         this.activity = activity;
         this.faceRecognition = new FaceRecognition();
         this.privateInformation = new PrivateInformation();
-        this.uriPaths = new URIPaths(this.privateInformation);
+        this.uriPaths = new URIPaths(this.privateInformation, activity);
         this.saveEasyPhoto = new SaveEasyPhoto();
         this.actionPicture = new ActionPicture(activity, ActionPictureObject.BEST_QUALITY_PHOTO, permissionGranted, this.uriPaths);
     }
@@ -58,7 +52,7 @@ public class MagicalCameraObject {
         this.activity = activity;
         this.faceRecognition = new FaceRecognition();
         this.privateInformation = new PrivateInformation();
-        this.uriPaths = new URIPaths(this.privateInformation);
+        this.uriPaths = new URIPaths(this.privateInformation, activity);
         this.saveEasyPhoto = new SaveEasyPhoto();
         this.actionPicture = new ActionPicture(activity, qualityPhoto, permissionGranted, this.uriPaths);
     }
